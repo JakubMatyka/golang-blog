@@ -16,4 +16,7 @@ func someFunc(w http.ResponseWriter, req *http.Request) {
 	w.Write([]byte("Hello universe"))
 }
 
-/* RUN YOUR CODE FROM MAIN DIRECTORY!!! */
+/*
+/ RUN YOUR CODE FROM MAIN DIRECTORY!!!
+/ Always remember to add bin and pkg folders as this is a convention used
+*/
