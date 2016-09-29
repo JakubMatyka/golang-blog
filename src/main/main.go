@@ -1,22 +1,13 @@
-/* main package */
 package main
 
-/* importing necessary pkg */
 import "net/http"
 
 func main() {
-	/* whatever is the most specific */
-	http.HandleFunc("/", someFunc)
-	/* nil is for default ServeMux */
-	http.ListenAndServe(":8000", nil)
+	myMux := http.NewServeMux()
+	myMux.HandleFunc("/", someFunc)
+	http.ListenAndServe(":8000", myMux)
 }
 
-/* write my request back; incoming request */
 func someFunc(w http.ResponseWriter, req *http.Request) {
-	w.Write([]byte("Hello universe"))
+	w.Write([]byte("Hello on the Golang blog post"))
 }
-
-/*
-/ RUN YOUR CODE FROM MAIN DIRECTORY!!!
-/ Always remember to add bin and pkg folders as this is a convention used
-*/
