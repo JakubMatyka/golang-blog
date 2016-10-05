@@ -1,15 +1,15 @@
 package main
 
 import (
+	"net/http"
 	"io/ioutil"
 	"log"
-	"net/http"
 )
 
 type MyHandler struct {
 }
 
-func (this *MyHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func (this *MyHandler) ServeHTTP(w http.ResponseWriter, r *http.Request)    {
 	path := r.URL.Path[1:]
 	log.Println(path)
 
